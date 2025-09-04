@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0d0d0d; /* black background */
+  color: #ffffff; /* default text white */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+a {
+  color: #1e90ff; /* blue links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #63b3ed; /* lighter blue hover */
+}
+
+.section {
+  padding: 15px 10px;
+}
+
+.section-title {
+  color: #1e90ff;
+  margin-bottom: 40px;
+  text-align: center;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 50px; /* equal to navbar height */
+}

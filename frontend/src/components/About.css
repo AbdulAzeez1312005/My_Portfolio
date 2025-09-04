@@ -1,0 +1,74 @@
+/* === About Section === */
+.about-section {
+  background: #000;            /* pure black */
+  color: #e6e6e6;              /* soft white for readability */
+  padding: 80px 40px;
+}
+
+/* Section title */
+.section-title {
+  color: #1e90ff;              /* blue accent */
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 36px;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgba(30, 144, 255, 0.5); /* subtle glow */
+}
+
+/* Paragraphs */
+.about-intro,
+.about-paragraph {
+  text-align: left;
+  line-height: 1.75;
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+  color: #dcdcdc; /* softer white */
+}
+
+/* Callout box */
+.about-callout {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #0d0d0d;         /* slightly lighter black for contrast */
+  border: 1px solid #1e90ff;
+  border-left: 5px solid #1e90ff;
+  padding: 18px 20px;
+  border-radius: 12px;
+  margin: 22px 0 32px;
+  box-shadow: 0px 4px 12px rgba(30, 144, 255, 0.25); /* blue glow */
+}
+
+/* Key highlights title */
+.key-title {
+  margin: 26px 0 14px;
+  color: #1e90ff;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+/* Bullet list */
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  color: #dcdcdc;
+}
+
+/* Custom blue bullet */
+.about-list li::before {
+  content: "•";
+  color: #1e90ff;
+  font-weight: 900;
+  margin-top: 2px;
+}
