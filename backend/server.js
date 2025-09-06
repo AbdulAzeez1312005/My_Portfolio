@@ -11,14 +11,14 @@ dotenv.config();
 
 const app = express();
 
-// ✅ Middleware (must come before routes)
+// ✅ Middleware
 app.use(cors());
-app.use(express.json()); // parses application/json
-app.use(express.urlencoded({ extended: true })); // parses form-urlencoded
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // ✅ Routes
 app.use("/api/portfolio", portfolioRoutes);
-app.use("/api/mail", mailRoutes); // 👈 added
+app.use("/api/mail", mailRoutes);
 
 // ✅ Simple test route
 app.get("/", (req, res) => {
@@ -27,8 +27,7 @@ app.get("/", (req, res) => {
 
 // ✅ Environment variables
 const PORT = process.env.PORT || 5000;
-const MONGO_URI =
-  process.env.MONGO_URI || "mongodb://127.0.0.1:27017/mern_portfolio";
+const MONGO_URI = process.env.MONGO_URI; // 👈 removed local fallback
 
 // ✅ Connect to MongoDB and start server
 mongoose
@@ -39,7 +38,7 @@ mongoose
   .then(() => {
     console.log("✅ MongoDB connected");
     app.listen(PORT, () =>
-      console.log(`🚀 Server running on http://localhost:${PORT}`)
+      console.log(`🚀 Server running on port ${PORT}`)
     );
   })
   .catch((err) => console.error("❌ MongoDB connection error:", err));
