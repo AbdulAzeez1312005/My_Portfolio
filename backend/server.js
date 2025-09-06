@@ -5,36 +5,36 @@ import dotenv from "dotenv";
 
 // Routes
 import portfolioRoutes from "./routes/portfolioRoutes.js";
-import mailRoutes from "./routes/mailRoutes.js"; // 👈 added
+import mailRoutes from "./routes/mailRoutes.js";
 
 dotenv.config();
 
 const app = express();
 
-// ✅ Middleware
-app.use(cors());
+// Middleware
+app.use(cors({
+  origin: ["http://localhost:3000", "https://my-portfolio-gfhe.vercel.app"],
+  methods: ["GET", "POST"],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// ✅ Routes
+// Routes
 app.use("/api/portfolio", portfolioRoutes);
 app.use("/api/mail", mailRoutes);
 
-// ✅ Simple test route
+// Test route
 app.get("/", (req, res) => {
   res.send("Backend is running...");
 });
 
-// ✅ Environment variables
+// Env variables
 const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI; // 👈 removed local fallback
+const MONGO_URI = process.env.MONGO_URI;
 
-// ✅ Connect to MongoDB and start server
-mongoose
-  .connect(MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+// Connect to MongoDB and start server
+mongoose.connect(MONGO_URI)
   .then(() => {
     console.log("✅ MongoDB connected");
     app.listen(PORT, () =>
