@@ -15,11 +15,14 @@ function Contact() {
     e.preventDefault();
     setLoading(true);
     try {
-      axios.post("https://mern-portfolio-backend-yjka.onrender.com/api/mail", formData);
-
+      await axios.post(
+        "https://mern-portfolio-backend-yjka.onrender.com/api/mail",
+        formData
+      );
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
-    } catch {
+    } catch (err) {
+      console.error("Error sending mail:", err);
       setStatus("error");
     } finally {
       setLoading(false);
