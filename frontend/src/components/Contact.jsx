@@ -15,7 +15,8 @@ function Contact() {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post("http://localhost:4000/api/mail/contact", formData);
+      axios.post("https://mern-portfolio-backend-yjka.onrender.com/api/mail", formData);
+
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
     } catch {
