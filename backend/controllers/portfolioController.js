@@ -1,4 +1,4 @@
-import Portfolio from "../models/portfolio.js";
+import Portfolio from "../models/Portfolio.js";
 
 // @desc    Get all portfolio projects
 // @route   GET /api/portfolio
