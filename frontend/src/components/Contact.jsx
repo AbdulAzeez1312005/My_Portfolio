@@ -16,7 +16,7 @@ function Contact() {
     setLoading(true);
     try {
       await axios.post(
-        "https://mern-portfolio-backend-yjka.onrender.com/api/mail",
+        "https://mern-portfolio-backend-yjka.onrender.com/api/mail/contact",
         formData
       );
       setStatus("success");
